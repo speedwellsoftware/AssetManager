@@ -1,0 +1,12 @@
+﻿@model AssetManager.Models.AssetDetailsModel
+
+@{
+    ViewBag.Title = "view";
+}
+
+<h2>@Model.GroupName</h2>
+<p>@Model.Name</p>
+<p>
+    @Html.ActionLink("Edit", "Edit", null, new { @class = "btn btn-success" })
+    @Html.ActionLink("Back", "Index", "Home", null, new { @class = "btn btn-default" })
+</p>

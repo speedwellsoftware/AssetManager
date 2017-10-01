@@ -1,0 +1,39 @@
+﻿@model AssetManager.Models.AssetDetailsModel
+
+@{
+    ViewBag.Title = "edit asset";
+}
+
+<h2>Edit asset</h2>
+<p>@Model.Name</p>
+
+@using (Html.BeginForm("Save", "Asset", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(x => x.Id)
+    <div class="form-group">
+        <div class="editor-label">
+            @Html.LabelFor(x => x.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(x => x.Name)
+            @Html.ValidationMessageFor(x => x.Name)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(x => x.GroupName)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(x => x.GroupId, Model.Groups)
+        </div>
+
+    </div>
+    <div class="form-group">
+        <input class="btn btn-success" type="submit" value="Save" />
+        @if (Model.Id == 0) {
+            @Html.ActionLink("Cancel", "Index", "Home", null, new { @class = "btn btn-default" })
+        } else {
+            @Html.ActionLink("Cancel", "View", null, new { @class = "btn btn-default" })
+        }
+    </div>
+}
+
