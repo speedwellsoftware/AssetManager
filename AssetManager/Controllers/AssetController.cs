@@ -66,7 +66,7 @@ namespace AssetManager.Controllers
                 return RedirectToAction("Index", "Home");
             }
             var repo = new AssetRepository();
-            var id = await repo.SaveAssetAsync(new Asset { Id = model.Id, Name = model.Name, GroupId = model.GroupId });
+            var id = await repo.SaveAssetAsync(new Asset { Id = model.Id, Name = model.Name, Width = model.Width, Height = model.Height, Length = model.Length, GroupId = model.GroupId });
             return RedirectToAction("View", new { assetId = id });
         }
         private AssetDetailsModel AddEdit(int assetId)

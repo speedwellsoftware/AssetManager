@@ -19,6 +19,41 @@
             @Html.EditorFor(x => x.Name)
             @Html.ValidationMessageFor(x => x.Name)
         </div>
+        <div class="editor-field">
+            <label>Dimensions</label>
+            <table>
+                <tr>
+                    <td class="editor-label">
+                        @Html.LabelFor(x => x.Width)
+                    </td>
+                    <td class="editor-field">
+                        @Html.EditorFor(x => x.Width)
+                        <span> cm </span>
+                        @Html.ValidationMessageFor(x => x.Width)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="editor-label">
+                        @Html.LabelFor(x => x.Height)
+                    </td>
+                    <td class="editor-field">
+                        @Html.EditorFor(x => x.Height)
+                        <span> cm </span>
+                        @Html.ValidationMessageFor(x => x.Height)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="editor-label">
+                        @Html.LabelFor(x => x.Length)
+                    </td>
+                    <td class="editor-field">
+                        @Html.EditorFor(x => x.Length)
+                        <span> cm </span>
+                        @Html.ValidationMessageFor(x => x.Length)
+                    </td>
+                </tr>
+            </table>
+        </div>
         <div class="editor-label">
             @Html.LabelFor(x => x.GroupName)
         </div>
@@ -29,9 +64,12 @@
     </div>
     <div class="form-group">
         <input class="btn btn-success" type="submit" value="Save" />
-        @if (Model.Id == 0) {
+        @if (Model.Id == 0)
+        {
             @Html.ActionLink("Cancel", "Index", "Home", null, new { @class = "btn btn-default" })
-        } else {
+        }
+        else
+        {
             @Html.ActionLink("Cancel", "View", null, new { @class = "btn btn-default" })
         }
     </div>

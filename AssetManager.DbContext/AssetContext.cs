@@ -1,5 +1,4 @@
 ﻿using System.Data.Entity;
-using System.Data.Entity.Core.EntityClient;
 using AssetManager.Model;
 
 namespace AssetManager.DbContext
@@ -8,6 +7,7 @@ namespace AssetManager.DbContext
     {
         public AssetContext(): base("AssetConnection")
         {
+            Database.SetInitializer(new DropCreateDatabaseIfModelChangesSeed());
             var forceDll = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
         }
 

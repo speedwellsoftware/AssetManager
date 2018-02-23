@@ -4,8 +4,11 @@
     ViewBag.Title = "view";
 }
 
-<h2>@Model.GroupName</h2>
-<p>@Model.Name</p>
+<h2>@Model.GroupName » @Model.Name</h2>
+<label>Dimensions</label>
+<div>@Html.LabelFor(x => x.Width) @Model.Width cm</div>
+<div>@Html.LabelFor(x => x.Height) @Model.Height cm</div>
+<div>@Html.LabelFor(x => x.Length) @Model.Length cm</div>
 <p>
     @Html.ActionLink("Edit", "Edit", null, new { @class = "btn btn-success" })
     @Html.ActionLink("Back", "Index", "Home", null, new { @class = "btn btn-default" })
