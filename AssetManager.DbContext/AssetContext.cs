@@ -8,6 +8,7 @@ namespace AssetManager.DbContext
     {
         public AssetContext(): base("AssetConnection")
         {
+            var forceDll = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
         }
 
         public DbSet<Asset> Assets { get; set; }
