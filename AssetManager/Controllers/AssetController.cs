@@ -80,7 +80,6 @@ namespace AssetManager.Controllers
             var groups = repo.GetGroups();
             return new AssetDetailsModel(asset)
             {
-                GroupName = asset.Group?.Name,
                 Groups = groups.Select(g =>
                     new SelectListItem {Selected = asset.GroupId == g.Id, Text = g.Name, Value = g.Id.ToString()})
             };

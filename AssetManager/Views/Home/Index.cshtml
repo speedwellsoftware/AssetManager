@@ -22,7 +22,7 @@
                 {
                     <tr>
                         <td class="col-xs-6">@Html.ActionLink(asset.Name, "View", "Asset", new { assetId = asset.Id }, null)</td>
-                        <td class="col-xs-5">@asset.Group.Name</td>
+                        <td class="col-xs-5">@asset.GroupName</td>
                         <td class="col-xs-1"><button class="btn btn-danger" href="#" data-href="@Url.Action("Delete", "Asset", new {id = asset.Id})" data-toggle="modal" data-target="#confirm-delete">Remove</button></td>
                     </tr>
                 }

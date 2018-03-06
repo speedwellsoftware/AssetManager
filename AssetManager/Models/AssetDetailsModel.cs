@@ -39,6 +39,7 @@ namespace AssetManager.Models
             Height = asset.Height;
             Length = asset.Length;
             GroupId = asset.GroupId;
+            GroupName = asset.Group?.Name;
         }
     }
 }

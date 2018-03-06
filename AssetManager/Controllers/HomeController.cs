@@ -10,7 +10,7 @@ namespace AssetManager.Controllers
         public ActionResult Index()
         {
             var assetRepository = new AssetRepository();
-            return View(new AssetListModel { Assets = assetRepository.GetAssets().ToList() });
+            return View(new AssetListModel { Assets = assetRepository.GetAssets().Select(a => new AssetDetailsModel(a)).ToList() });
         }
 
         public ActionResult About()

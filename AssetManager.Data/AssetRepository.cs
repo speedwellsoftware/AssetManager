@@ -12,7 +12,7 @@ namespace AssetManager.Data
         public IEnumerable<Asset> GetAssets()
         {
             var context = new AssetContext();
-            var assets = context.Assets.Include(a => a.Group).AsEnumerable();
+            var assets = context.Assets.Include(nameof(Asset.Group)).AsEnumerable();
             return assets;
         }
 
